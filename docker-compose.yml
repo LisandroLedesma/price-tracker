@@ -1,0 +1,15 @@
+services:
+  price_tracker_db:
+    image: postgres:16.3-alpine
+    container_name: price_tracker_db
+    environment:
+      POSTGRES_DB: price_tracker_db
+      POSTGRES_USER: api
+      POSTGRES_PASSWORD: api_1
+    ports:
+      - "5333:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

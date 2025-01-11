@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Aplicación</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-6">
+        <h1 class="text-xl font-bold text-gray-900">Price Tracker</h1>
+        <nav class="space-x-4">
+          <a href="#" class="text-gray-700 hover:text-indigo-500">Home</a>
+          <a href="#" class="text-gray-700 hover:text-indigo-500">About</a>
+          <a href="#" class="text-gray-700 hover:text-indigo-500">Tracker</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="bg-indigo-600 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-extrabold">Product: </h2>
+          <p class="mt-4 text-lg">-</p>
+          <div class="mt-6">
+            <a href="#features" class="px-6 py-3 bg-white text-indigo-600 font-medium rounded-md shadow hover:bg-gray-100">
+              Ver más
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h3 class="text-2xl font-bold text-gray-900">completar</h3>
+          <p class="mt-2 text-gray-600">asdfgsdgadfgasdgfasdgfasdg.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-6 bg-white rounded-lg shadow-md text-center">
+            <div class="text-indigo-500 text-3xl mb-4">🌟</div>
+            <h4 class="font-semibold text-gray-900">esta</h4>
+            <p class="text-gray-600 mt-2">asdfgsdgadfgasdgfasdgfasdg.</p>
+          </div>
+          <div class="p-6 bg-white rounded-lg shadow-md text-center">
+            <div class="text-indigo-500 text-3xl mb-4">⚡</div>
+            <h4 class="font-semibold text-gray-900">parte</h4>
+            <p class="text-gray-600 mt-2">asdfgsdgadfgasdgfasdgfasdg.</p>
+          </div>
+          <div class="p-6 bg-white rounded-lg shadow-md text-center">
+            <div class="text-indigo-500 text-3xl mb-4">🔒</div>
+            <h4 class="font-semibold text-gray-900">o no</h4>
+            <p class="text-gray-600 mt-2">asdfgsdgadfgasdgfasdgfasdg.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <p class="text-sm">&copy; 2025 el footer. Todos los derechos reservados.</p>
+        <nav class="space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white">Privacidad</a>
+          <a href="#" class="text-gray-400 hover:text-white">Términos</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

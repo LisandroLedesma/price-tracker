@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Price Tracker{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-gray-800 font-sans">
+    <header class="bg-slate-200 shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center py-6">
+              <h1 class="text-xl font-bold text-gray-900">Price Tracker</h1>
+              
+              <!-- Hamburger button -->
+              <button 
+                  id="menuButton"
+                  class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-indigo-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                  aria-expanded="false"
+              >
+                  <span class="sr-only">Abrir menú principal</span>
+                  <!-- Icon when menu is closed -->
+                  <svg id="menuIcon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                  <!-- Icon when menu is open -->
+                  <svg id="closeIcon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+              </button>
+
+              <!-- Desktop menu -->
+              <nav class="hidden md:flex space-x-4">
+                  <a href="#" class="text-gray-700 hover:text-sky-700">Inicio</a>
+                  <a href="#" class="text-gray-700 hover:text-sky-700">FAQ</a>
+                  <a href="#" class="text-gray-700 hover:text-sky-700">Tus Seguimientos</a>
+                  <a href="#" class="text-gray-700 hover:text-sky-700">Ejemplo</a>
+              </nav>
+          </div>
+
+          <!-- Mobile menu -->
+          <div id="mobileMenu" class="hidden md:hidden pb-3">
+              <div class="space-y-1">
+                  <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-500 hover:bg-gray-100">Inicio</a>
+                  <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-500 hover:bg-gray-100">FAQ</a>
+                  <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-500 hover:bg-gray-100">Tus Seguimientos</a>
+                  <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-500 hover:bg-gray-100">Ejemplo</a>
+              </div>
+          </div>
+      </div>
+  </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <p class="text-sm">TO-DO.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = document.getElementById('menuIcon');
+      const closeIcon = document.getElementById('closeIcon');
+
+      menuButton.addEventListener('click', () => {
+          const isMenuOpen = mobileMenu.classList.contains('hidden');
+          
+          // Toggle menu
+          mobileMenu.classList.toggle('hidden');
+          
+          // Toggle icons
+          menuIcon.classList.toggle('hidden');
+          closeIcon.classList.toggle('hidden');
+          
+          // Update aria-expanded
+          menuButton.setAttribute('aria-expanded', isMenuOpen);
+      });
+  </script>
+</body>
+</html>
